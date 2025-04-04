@@ -40,7 +40,6 @@
 // };
 
 // export default MetricsSection;
-
 import React, { useState, useEffect, useRef } from "react";
 import "../MetricsSection/MetricsSection.css"; 
 import logo1 from './image/logo1.svg';
@@ -115,16 +114,15 @@ const MetricsSection = () => {
         ))}
       </div>
 
-      {/* Scrolling Logos */}
+      {/* Scrolling Logos with Seamless Effect */}
       <div className="logo-wrapper">
         <div className="logo-container">
-          <img src={logo1} alt="ahrefs" />
-          <img src={logo2} alt="instacart" />
-          <img src={logo3} alt="groupon" />
-          <img src={logo4} alt="century 21" />
-          <img src={logo5} alt="cleardesk" />
-          <img src={logo6} alt="one ims" />
-          <img src={logo7} alt="ring" />
+          {[logo1, logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
+            <img key={index} src={logo} alt={`logo-${index}`} />
+          ))}
+          {[logo1, logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
+            <img key={`duplicate-${index}`} src={logo} alt={`logo-duplicate-${index}`} />
+          ))}
         </div>
       </div>
     </div>
@@ -132,3 +130,4 @@ const MetricsSection = () => {
 };
 
 export default MetricsSection;
+

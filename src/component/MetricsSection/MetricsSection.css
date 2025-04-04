@@ -1,115 +1,85 @@
-.metrics-container {
-    background-color: #2faf9a;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-  }
-  
-  .metrics-header {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .metrics-grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 30px;
-  }
-  
-  .metric-item {
-    text-align: center;
-  }
-  
-  /* Marquee Wrapper */
-  .logo-wrapper {
+/* Ensures the background remains unchanged */
+.logo-wrapper {
     overflow: hidden;
-    white-space: nowrap;
     width: 100%;
     position: relative;
-  }
-  
-  /* Marquee Effect */
-  .logo-container {
+    background: transparent;
+    padding: 20px 0;
+}
+
+/* Creates the blur effect only at the edges */
+.logo-wrapper::before,
+.logo-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Left blur (entry) */
+.logo-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #2faf9a, rgba(255, 255, 255, 0));
+}
+
+/* Right blur (exit) */
+.logo-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #2faf9a, rgba(255, 255, 255, 0));
+}
+
+/* Logo container with seamless scrolling */
+.logo-container {
     display: flex;
+    align-items: center;
     gap: 25px;
     flex-wrap: nowrap;
     width: max-content;
-    animation: scrollLogos 15s linear infinite;
-  }
-  
-  .logo-container img {
+    animation: scrollLogos 10s linear infinite;
+}
+
+/* Logo images */
+.logo-container img {
     max-width: 90px;
     opacity: 0.7;
     transition: opacity 0.3s ease-in-out;
-  }
-  
-  .logo-container img:hover {
+}
+
+/* Hover effect for logos */
+.logo-container img:hover {
     opacity: 1;
-  }
-  
-  /* Marquee Animation */
-  @keyframes scrollLogos {
+}
+
+/* Continuous scrolling animation */
+@keyframes scrollLogos {
     from {
-      transform: translateX(100%);
+        transform: translateX(0);
     }
     to {
-      transform: translateX(-100%);
+        transform: translateX(-50%);
     }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .metrics-header {
-      font-size: 16px;
-    }
-  
-    .metrics-grid {
-      gap: 20px;
-    }
-  
-    .metric-item h2 {
-      font-size: 28px;
-    }
-  
-    .metric-item p {
-      font-size: 12px;
-    }
-  
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
     .logo-container {
-      gap: 15px;
+        gap: 15px;
     }
-  
+
     .logo-container img {
-      max-width: 80px;
+        max-width: 80px;
     }
-  }
-  
-  @media (max-width: 480px) {
-    .metrics-header {
-      font-size: 14px;
-    }
-  
-    .metrics-grid {
-      gap: 10px;
-      flex-direction: column;
-    }
-  
-    .metric-item h2 {
-      font-size: 24px;
-    }
-  
-    .metric-item p {
-      font-size: 12px;
-    }
-  
+}
+
+@media (max-width: 480px) {
     .logo-container {
-      gap: 10px;
+        gap: 10px;
     }
-  
+
     .logo-container img {
-      max-width: 70px;
+        max-width: 70px;
     }
-  }
-  
+}
