@@ -1,47 +1,5 @@
-// import React from "react";
-// import "../App.css"; 
-
-// const MetricsSection = () => {
-//   return (
-//     <div className="metrics-container">
-//       <p className="metrics-header">
-//         Time tracking & productivity metrics trusted by 112,000+ businesses
-//       </p>
-//       <div className="metrics-grid">
-//         <div className="metric-item">
-//           <h2>500K+</h2>
-//           <p>Active users</p>
-//         </div>
-//         <div className="metric-item">
-//           <h2>21M+</h2>
-//           <p>Total hours tracked</p>
-//         </div>
-//         <div className="metric-item">
-//           <h2>4M+</h2>
-//           <p>Tasks completed</p>
-//         </div>
-//         <div className="metric-item">
-//           <h2>300K+</h2>
-//           <p>Payments</p>
-//         </div>
-//       </div>
-
-//       <div className="logo-container1">
-//         <img src="/logos/ahrefs.png" alt="ahrefs" />
-//         <img src="/logos/instacart.png" alt="instacart" />
-//         <img src="/logos/groupon.png" alt="groupon" />
-//         <img src="/logos/century21.png" alt="century 21" />
-//         <img src="/logos/cleardesk.png" alt="cleardesk" />
-//         <img src="/logos/oneims.png" alt="one ims" />
-//         <img src="/logos/ring.png" alt="ring" />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default MetricsSection;
 import React, { useState, useEffect, useRef } from "react";
-import "../MetricsSection/MetricsSection.css"; 
+import "../MetricsSection/MetricsSection.css";
 import logo1 from './image/logo1.svg';
 import logo2 from './image/logo2.svg';
 import logo3 from './image/logo3.svg';
@@ -86,7 +44,7 @@ const MetricsSection = () => {
         setIsInView(true);
         observer.disconnect();
       }
-    }, { threshold: 0.5 });
+    }, { threshold: 0.0 });
 
     if (metricsRef.current) {
       observer.observe(metricsRef.current);
@@ -98,6 +56,9 @@ const MetricsSection = () => {
       handleCountUp(metricsRef.current);
     }
   }, [isInView]);
+  const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7,logo1, logo2, logo3, logo4, logo5, logo6, logo7];
+
+
 
   return (
     <div className="metrics-container" ref={metricsRef}>
@@ -115,19 +76,41 @@ const MetricsSection = () => {
       </div>
 
       {/* Scrolling Logos with Seamless Effect */}
-      <div className="logo-wrapper">
+      {/* <div className="logo-wrapper">
         <div className="logo-container">
           {[logo1, logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
             <img key={index} src={logo} alt={`logo-${index}`} />
           ))}
-          {[logo1, logo2, logo3, logo4, logo5, logo6, logo7].map((logo, index) => (
-            <img key={`duplicate-${index}`} src={logo} alt={`logo-duplicate-${index}`} />
+          
+        </div>
+
+
+      </div> */}
+
+      {/* <div className="logo-wrapper">
+        <div className="logo-container">
+          {[...logos, ...logos].map((logo, index) => (
+            <img key={index} src={logo} alt={`logo-${index}`} />
           ))}
         </div>
+      </div> */}
+
+      <div className="logo-wrapper">
+        <div className="logo-track">
+          <div className="logo-container">
+            {logos.map((logo, index) => (
+              <img key={index} src={logo} alt={`logo-${index}`} />
+            ))}
+            {logos.map((logo, index) => (
+              <img key={index + logos.length} src={logo} alt={`logo-duplicate-${index}`} />
+            ))}
+          </div>
+        </div>
       </div>
+
+
     </div>
   );
 };
 
 export default MetricsSection;
-

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './AppNavigator.css';
-import { FaHome, FaInfoCircle, FaPhone, FaBars, FaUser } from 'react-icons/fa';
-import logo from '../image/logo.png'; // Ensure the path is correct
+import { FaBars } from 'react-icons/fa';
+import logo from '../image/logo.png'; // Adjust path if needed
 
 const Navigator = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,12 +11,12 @@ const Navigator = () => {
     <nav className="navbar">
       {/* Logo */}
       <div className="nav-logo-container">
-        <Link to="/">
+        <NavLink to="/" end>
           <img src={logo} alt="Logo" className="nav-logo" />
-        </Link>
+        </NavLink>
       </div>
 
-      {/* Hamburger Menu (for mobile) */}
+      {/* Hamburger Menu */}
       <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         <FaBars className="menu-icon" />
       </div>
@@ -24,24 +24,39 @@ const Navigator = () => {
       {/* Navigation Links */}
       <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
         <li className="nav-item">
-          <Link to="/" className="nav-link">
-            <FaHome className="nav-icon" /> Home
-          </Link>
+          <NavLink to="/" className="nav-link" end>
+            Home
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link to="/about" className="nav-link">
-            <FaInfoCircle className="nav-icon" /> About
-          </Link>
+          <NavLink to="/about" className="nav-link">
+            About
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link to="/contact" className="nav-link">
-            <FaPhone className="nav-icon" /> Contact
-          </Link>
+          <NavLink to="/features" className="nav-link">
+            Features
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link to="https://vauras.cloud/login" className="nav-link">
-            <FaUser className="nav-icon" /> Login
-          </Link>
+          <NavLink to="/pricing" className="nav-link">
+            Pricing
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/support" className="nav-link">
+            Support
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/contact" className="nav-link">
+            Contact
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <a href="https://vauras.cloud/login" className="nav-link" target="_blank" rel="noopener noreferrer">
+            Login
+          </a>
         </li>
       </ul>
     </nav>

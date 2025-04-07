@@ -1,8 +1,7 @@
 /* Navbar styles */
 .navbar {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 4px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -31,8 +30,8 @@
 }
 
 .menu-icon {
-  font-size: 24px;
-  color: white;
+  font-size: 20px;
+  color: black;
 }
 
 /* Navbar list */
@@ -41,6 +40,7 @@
   list-style: none;
   padding: 0;
   margin-left: auto;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav-item {
@@ -55,15 +55,18 @@
   display: flex;
   align-items: center;
   transition: color 0.3s;
-}
-
-.nav-icon {
-  margin-right: 8px;
-  font-size: 18px;
+  padding-bottom: 2px;
 }
 
 .nav-link:hover {
-  color: #ffd700;
+  color: #746ed1;
+}
+
+/* Active underline style */
+.nav-link.active {
+  border-bottom: 3px solid #3175e0;
+  color: black;
+  border-radius: 3px;
 }
 
 /* Responsive Design */
@@ -75,7 +78,7 @@
   .nav-list {
     display: none;
     flex-direction: column;
-    background-color: #16181b;
+    background-color: rgb(255, 255, 255);
     position: absolute;
     top: 60px;
     left: 0;
@@ -87,6 +90,7 @@
 
   .nav-list.open {
     display: flex;
+    top: 36px;
   }
 
   .nav-item {
@@ -111,5 +115,9 @@
 
   .nav-list {
     top: 50px;
+  }
+
+  .navbar {
+    padding: 4px 6px;
   }
 }

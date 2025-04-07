@@ -7,17 +7,19 @@ import TimeTrackingSection from "./TimeTrackingSection";
 import Features from "./Features";
 import WallofLove from "./WallOfLove/WallOfLove"
 import ValueComponent from "./ValueComponent/ValueComponent";
+import CommunitySection from "./CommunitySection/CommunitySection"
 function Home() {
     return(
 
         <div>
-            <Dashboard/>
+        <Dashboard/>
        <MetricsSection/>
-       <TimeTrackingSection/>
-       <ComplianceSection/>
        <WallofLove/>
+       <TimeTrackingSection/>
        <ValueComponent/>
        <Features/>
+       <CommunitySection/>
+       <ComplianceSection/>
        <FooterSection/>
         </div>
     );

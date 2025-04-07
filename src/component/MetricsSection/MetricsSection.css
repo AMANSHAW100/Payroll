@@ -1,15 +1,13 @@
-/* Ensures the background remains unchanged */
 .logo-wrapper {
     overflow: hidden;
     width: 100%;
     position: relative;
     background: transparent;
     padding: 20px 0;
-}
-
-/* Creates the blur effect only at the edges */
-.logo-wrapper::before,
-.logo-wrapper::after {
+  }
+  
+  .logo-wrapper::before,
+  .logo-wrapper::after {
     content: "";
     position: absolute;
     top: 0;
@@ -17,69 +15,68 @@
     height: 100%;
     z-index: 2;
     pointer-events: none;
-}
-
-/* Left blur (entry) */
-.logo-wrapper::before {
+  }
+  
+  .logo-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, #2faf9a, rgba(255, 255, 255, 0));
-}
-
-/* Right blur (exit) */
-.logo-wrapper::after {
+    background: linear-gradient(to right, #f4f8fc, rgba(255, 255, 255, 0));
+  }
+  
+  .logo-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, #2faf9a, rgba(255, 255, 255, 0));
-}
-
-/* Logo container with seamless scrolling */
-.logo-container {
+    background: linear-gradient(to left, #f4f8fc, rgba(255, 255, 255, 0));
+  }
+  
+  /* Add this wrapper for the track animation */
+  .logo-track {
+    display: flex;
+    width: fit-content;
+    animation: scrollTrack 20s linear infinite;
+  }
+  
+  .logo-container {
     display: flex;
     align-items: center;
     gap: 25px;
     flex-wrap: nowrap;
-    width: max-content;
-    animation: scrollLogos 10s linear infinite;
-}
-
-/* Logo images */
-.logo-container img {
+  }
+  
+  .logo-container img {
     max-width: 90px;
     opacity: 0.7;
     transition: opacity 0.3s ease-in-out;
-}
-
-/* Hover effect for logos */
-.logo-container img:hover {
+  }
+  
+  .logo-container img:hover {
     opacity: 1;
-}
-
-/* Continuous scrolling animation */
-@keyframes scrollLogos {
-    from {
-        transform: translateX(0);
+  }
+  
+  @keyframes scrollTrack {
+    0% {
+      transform: translateX(0);
     }
-    to {
-        transform: translateX(-50%);
+    100% {
+      transform: translateX(-50%);
     }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
     .logo-container {
-        gap: 15px;
+      gap: 15px;
     }
-
+  
     .logo-container img {
-        max-width: 80px;
+      max-width: 80px;
     }
-}
-
-@media (max-width: 480px) {
+  }
+  
+  @media (max-width: 480px) {
     .logo-container {
-        gap: 10px;
+      gap: 10px;
     }
-
+  
     .logo-container img {
-        max-width: 70px;
+      max-width: 70px;
     }
-}
+  }

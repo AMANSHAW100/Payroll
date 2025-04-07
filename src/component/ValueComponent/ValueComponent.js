@@ -29,7 +29,7 @@ const ValueComponent = () => {
           // Move to the next role, loop back to the start if at the last role
           const nextIndex = (currentIndex + 1) % roles.length;
           setSelectedRole(roles[nextIndex].name);
-        }, 4000);
+        }, 6000);
     
         return () => clearInterval(interval); // Cleanup interval on component unmount
       }, [selectedRole]); 
@@ -37,8 +37,10 @@ const ValueComponent = () => {
     return (
         <div className="value-container">
             {/* Heading */}
+
+            
             <h2>
-                Everyone gets <span className="highlight">value</span> from day 1
+                Everyone gets value from day 1
             </h2>
             <p className="subtitle">
                 A platform loved by everyone in your company - by employers and employees
@@ -213,3 +215,4 @@ const ValueComponent = () => {
 };
 
 export default ValueComponent;
+

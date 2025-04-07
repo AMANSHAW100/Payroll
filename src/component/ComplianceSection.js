@@ -3,7 +3,7 @@ import "../App.css";
 
 const ComplianceSection = () => {
   return (
-    <div className="compliance-container">
+    <div className="compliance-container1">
       <div className="compliance-header">
         <h2>Stay compliant, without thinking about compliance</h2>
         <p>
@@ -28,6 +28,20 @@ const ComplianceSection = () => {
           <p>Download tax forms like 12BB, 24Q, TDS, and Form 16 instantly with e-signature capability built-in.</p>
         </div>
 
+        <div className="compliance-item">
+          <div className="compliance-icon">
+            <i className="fas fa-shield-alt"></i>
+          </div>
+          <h3>PF, ESI, LWF, PT, and IT</h3>
+          <p>Keep your business on legal footing across 28 states.</p>
+        </div>
+        <div className="compliance-item">
+          <div className="compliance-icon">
+            <i className="fas fa-shield-alt"></i>
+          </div>
+          <h3>PF, ESI, LWF, PT, and IT</h3>
+          <p>Keep your business on legal footing across 28 states.</p>
+        </div>
         <div className="compliance-item">
           <div className="compliance-icon">
             <i className="fas fa-shield-alt"></i>
