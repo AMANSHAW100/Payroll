@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './AppNavigator.css';
 import { FaBars } from 'react-icons/fa';
 import logo from '../image/logo.png'; // Adjust path if needed
-
+ 
 const Navigator = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -34,8 +34,8 @@ const Navigator = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/features" className="nav-link">
-            Features
+          <NavLink to="/Services" className="nav-link">
+            Services
           </NavLink>
         </li>
         <li className="nav-item">
@@ -49,7 +49,7 @@ const Navigator = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/contact" className="nav-link">
+          <NavLink to="/Contact" className="nav-link">
             Contact
           </NavLink>
         </li>

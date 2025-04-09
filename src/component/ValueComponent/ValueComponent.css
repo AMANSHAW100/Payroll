@@ -3,6 +3,7 @@
 .value-container {
   text-align: center;
   padding: 40px 20px;
+  margin-top: -64px;
   /* background: linear-gradient(to bottom, #9fb4c5 60%, #1167d6); */
 }
 

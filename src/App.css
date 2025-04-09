@@ -339,6 +339,7 @@ h1 {
   padding: 50px 0px;
   text-align: center;
   margin-bottom: -99px;
+  margin-top: -46px;
 }
 .compliance-grid{
   background-color: #ffffff;
@@ -408,6 +409,7 @@ body {
   background-color: #000000;
   color: white;
   padding: 60px 20px;
+  margin-top: -49px;
 }
 
 .footer-header {

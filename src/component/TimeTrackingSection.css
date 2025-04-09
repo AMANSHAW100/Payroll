@@ -17,6 +17,7 @@ body {
   background-color: #f8f9fc;
   padding: 10px;
   border-radius: 15px;
+  margin-top: -41px;
 }
 
 /* Sidebar */
@@ -54,7 +55,8 @@ body {
 }
 
 .heading{
-  margin-left:25%;
+  margin-left:30%;
+  margin-top: 53px;
 }
 
 .heading-part{
@@ -63,6 +65,7 @@ body {
 
 .heading-part2{
   margin-left: -105px;
+  
 }
 .sidebar-menu li.active {
   background: #bbe9f7;
